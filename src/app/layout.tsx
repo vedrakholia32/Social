@@ -5,6 +5,7 @@ import { ClerkProvider } from "@clerk/nextjs";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import Navbar from "@/components/Navbar";
 import Sidebar from "@/components/Sidebar";
+import { Toaster } from "react-hot-toast";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -18,7 +19,7 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Socially",
+  title: "Social",
   description: "A modern social media application powered by Next.js",
 };
 
@@ -37,6 +38,7 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
+
             <div className="min-h-screen">
               <Navbar />
 
@@ -52,7 +54,7 @@ export default function RootLayout({
                 </div>
               </main>
             </div>
-            {/* <Toaster /> */}
+            <Toaster />
           </ThemeProvider>
         </body>
       </html>
